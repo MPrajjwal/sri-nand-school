@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Website</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#2563eb',
+secondary: '#60a5fa'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.menu-open {
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.menu-closed {
+transform: translateX(100%);
+transition: transform 0.3s ease-in-out;
+}
+</style>
+</head>
+<body class="bg-white w-[375px] min-h-[762px] mx-auto relative">
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+<div class="flex items-center justify-between px-4 h-14">
+<div class="flex items-center">
+<span class="font-['Pacifico'] text-primary text-xl">Sri Nand School</span>
+</div>
+<button onclick="toggleMenu()" class="w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</nav>
+<div id="mobileMenu" class="menu-closed fixed top-14 right-0 w-full h-screen bg-white z-40">
+<div class="p-4 space-y-4">
+<a href="#" class="block p-2 hover:bg-gray-50 rounded-button">Home</a>
+<a href="#" class="block p-2 hover:bg-gray-50 rounded-button">About</a>
+<a href="#" class="block p-2 hover:bg-gray-50 rounded-button">Advertisements</a>
+<a href="#" class="block p-2 hover:bg-gray-50 rounded-button">Contact</a>
+</div>
+</div>
+<main class="pt-14 pb-16">
+<section class="relative h-[450px] overflow-hidden">
+<img src="school.png"
+class="w-full h-full object-cover" alt="School Building">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+<div class="text-white w-full">
+<h1 class="text-3xl font-bold mb-4">Academic Excellence</h1>
+<div id="rankSlideshow" class="relative w-full mb-6">
+<div class="overflow-hidden">
+<div id="rankSlides" class="flex transition-transform duration-500">
+<div class="flex-none w-full text-center">
+<img src="a.jpg"
+class="w-40 h-40 object-cover rounded-lg mb-2 mx-auto" alt="Top Student">
+<h3 class="font-medium text-lg">K.Chaitanya</h3>
+<p class="text-sm bg-white/20 rounded-full px-3 py-1 inline-block">587/600(2024)</p>
+</div>
+<div class="flex-none w-full text-center">
+<img src="b.jpg"
+class="w-40 h-40 object-cover rounded-lg mb-2 mx-auto" alt="Top Student">
+<h3 class="font-medium text-lg">v.Akshay Varma</h3>
+<p class="text-sm bg-white/20 rounded-full px-3 py-1 inline-block">581/600(2024)</p>
+</div>
+<div class="flex-none w-full text-center">
+<img src="sp-anjel.JPG"
+class="w-40 h-40 object-cover rounded-lg mb-2 mx-auto" alt="Top Student">
+<h3 class="font-medium text-lg">B.Anjel Roji</h3>
+<p class="text-sm bg-white/20 rounded-full px-3 py-1 inline-block">590/600(2024)</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-4 space-x-2">
+<div class="w-2 h-2 rounded-full bg-white/50 cursor-pointer slide-dot active" onclick="showSlide(0)"></div>
+<div class="w-2 h-2 rounded-full bg-white/50 cursor-pointer slide-dot" onclick="showSlide(1)"></div>
+<div class="w-2 h-2 rounded-full bg-white/50 cursor-pointer slide-dot" onclick="showSlide(2)"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-6">
+<h2 class="text-xl font-semibold mb-4">Student Achievements</h2>
+<div class="flex overflow-x-auto space-x-4 pb-4" id="studentAchievements">
+<div class="flex-none w-40 student-card cursor-pointer"">
+<img src="prajwla.png"
+class="w-full h-40 object-cover rounded-lg" alt="Student">
+<p class="text-sm mt-2 font-medium">M.Prajwala</p>
+<span class="text-xs text-primary block mt-1">576/600</span>
+</div>
+<div class="flex-none w-40 student-card cursor-pointer" ">
+<img src="lok.png"
+class="w-full h-40 object-cover rounded-lg" alt="Student">
+<p class="text-sm mt-2 font-medium">T.Lokesh</p>
+<span class="text-xs text-primary block mt-1">574/600</span>
+</div>
+<div class="flex-none w-40 student-card cursor-pointer" >
+<img src="pdma.png"
+class="w-full h-40 object-cover rounded-lg" alt="Student">
+<p class="text-sm mt-2 font-medium">M.Padma Kala</p>
+<span class="text-xs text-primary block mt-1">570/600</span>
+</div>
+<div class="flex-none w-40 student-card cursor-pointer" >
+<img src="pravaliks.png"
+class="w-full h-40 object-cover rounded-lg" alt="Student">
+<p class="text-sm mt-2 font-medium">S.Pravalika</p>
+<span class="text-xs text-primary block mt-1">558/600</span>
+</div>
+<div class="flex-none w-40 student-card cursor-pointer" >
+<img src="b.shank.png"
+class="w-full h-40 object-cover rounded-lg" alt="Student">
+<p class="text-sm mt-2 font-medium">B.Shankar</p>
+<span class="text-xs text-primary block mt-1">556/600</span>
+</div>
+<div class="flex-none w-40 student-card cursor-pointer" >
+    <img src="hams.png"
+    class="w-full h-40 object-cover rounded-lg" alt="Student">
+    <p class="text-sm mt-2 font-medium">Y.Hamsika</p>
+    <span class="text-xs text-primary block mt-1">552/600</span>
+    </div>
+    <div class="flex-none w-40 student-card cursor-pointer" >
+        <img src="saranya.png"
+        class="w-full h-40 object-cover rounded-lg" alt="Student">
+        <p class="text-sm mt-2 font-medium">CH.Saranya</p>
+        <span class="text-xs text-primary block mt-1">550/600</span>
+        </div>
+        <div class="flex-none w-40 student-card cursor-pointer">
+            <img src="ashish.png"
+            class="w-full h-40 object-cover rounded-lg" alt="Student">
+            <p class="text-sm mt-2 font-medium">K.Vatshal</p>
+            <span class="text-xs text-primary block mt-1">539/600</span>
+            </div>
+            <div class="flex-none w-40 student-card cursor-pointer" >
+                <img src="b.shank.png"
+                class="w-full h-40 object-cover rounded-lg" alt="Student">
+                <p class="text-sm mt-2 font-medium">B.Shankar</p>
+                <span class="text-xs text-primary block mt-1">556/600</span>
+                </div>
+                <div class="flex-none w-40 student-card cursor-pointer" >
+                    <img src="navya.png"
+                    class="w-full h-40 object-cover rounded-lg" alt="Student">
+                    <p class="text-sm mt-2 font-medium">K.Navya Sri</p>
+                    <span class="text-xs text-primary block mt-1">536/600</span>
+                    </div>
+                    <div class="flex-none w-40 student-card cursor-pointer" >
+                        <img src="s.prha.png"
+                        class="w-full h-40 object-cover rounded-lg" alt="Student">
+                        <p class="text-sm mt-2 font-medium">S.Praharika</p>
+                        <span class="text-xs text-primary block mt-1">526/600</span>
+                    </div>
+                    <div class="flex-none w-40 student-card cursor-pointer" >
+                        <img src="g.lo.png"
+                        class="w-full h-40 object-cover rounded-lg" alt="Student">
+                        <p class="text-sm mt-2 font-medium">G.Lokesh</p>
+                        <span class="text-xs text-primary block mt-1">520/600</span>
+                        </div>
+                        <div class="flex-none w-40 student-card cursor-pointer"     >
+                            <img src="a.jhu.png "
+                            class="w-full h-40 object-cover rounded-lg" alt="Student">
+                            <p class="text-sm mt-2 font-medium">A.Juhitha</p>
+                            <span class="text-xs text-primary block mt-1">517/600</span>
+                            </div>
+
+</div>
+</section>
+<section class="px-4 py-6 bg-gray-50">
+<h2 class="text-xl font-semibold mb-4">Alumni Success Stories</h2>
+<div class="relative">
+<div class="overflow-x-auto flex space-x-4 pb-4" id="alumniCarousel">
+<div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+<div class="flex items-center gap-4 mb-3">
+<img src="y.niharika.JPG"
+class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+<div>
+<h3 class="font-medium">Y.Niharika</h3>
+<p class="text-sm text-gray-600">Accenture</p>
+<div class="flex items-center mt-1">
+<span class="text-xs text-gray-500">12 Lakhs Per Annum</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-600 italic">"The foundation I received here was instrumental in my success at Accenture"</p>
+</div>
+<div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+    <div class="flex items-center gap-4 mb-3">
+    <img src="y.pavan.JPG"
+    class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+    <div>
+    <h3 class="font-medium">Y.Pavan Gopal</h3>
+    <p class="text-sm text-gray-600">IIT Ahmedabad</p>
+    <div class="flex items-center mt-1">
+    <span class="text-xs text-gray-500">MCO-18 Lakhs per annum</span>
+    </div>
+    </div>
+    </div>
+    <p class="text-sm text-gray-600 italic">"Every achievement of mine has roots in the education, values, and discipline I received in this school."</p>
+    </div>
+
+
+<div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+<div class="flex items-center gap-4 mb-3">
+<img src="G.bhargav.JPG"
+class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+<div>
+<h3 class="font-medium">G.Bhargav</h3>
+<p class="text-sm text-gray-600">NIT-Bhopal,Data scientist</p>
+<div class="flex items-center mt-1">
+<span class="text-xs text-gray-500">Ola Electric ,18 lakhs per annum</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-600 italic">"The competitive spirit and discipline I learned here shaped my career path."</p>
+</div>
+
+<div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+    <div class="flex items-center gap-4 mb-3">
+    <img src="m.s.sai.JPG"
+    class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+    <div>
+    <h3 class="font-medium">M.S.Sai</h3>
+    <p class="text-sm text-gray-600">HPCL</p>
+    <div class="flex items-center mt-1">
+    <span class="text-xs text-gray-500">12 lakhs per annum</span>
+    </div>
+    </div>
+    </div>
+    <p class="text-sm text-gray-600 italic">"Every lesson I learned in these classrooms went beyond books and prepared me for real life."</p>
+
+    </div>
+ 
+
+<div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+    <div class="flex items-center gap-4 mb-3">
+    <img src="R.Sharmili Devi.JPG"
+    class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+    <div>
+    <h3 class="font-medium">R.Sharmili Devi</h3>
+    <p class="text-sm text-gray-600">Infosys</p>
+    <div class="flex items-center mt-1">
+    <span class="text-xs text-gray-500">16 Lakhs per annum</span>
+    </div>
+    </div>
+    </div>
+    <p class="text-sm text-gray-600 italic">"The exposure, encouragement, and values I received here laid the path to my success."</p>
+</div>
+
+                <div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+                <div class="flex items-center gap-4 mb-3">
+                <img src="Gidla praneetha neha.AI&ML ACCENTURE PLACED ON CAMPUS RECRUITMENT.jpeg"
+                class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+                <div>
+                <h3 class="font-medium">Gidla Praneetha</h3>
+                <p class="text-sm text-gray-600">AI&ML</p>
+                <div class="flex items-center mt-1">
+                <span class="text-xs text-gray-500">Accenture</span>
+                </div>
+                </div>
+                </div>
+                <p class="text-sm text-gray-600 italic">"The strong foundation built here helped me excel in both academics and life."</p>
+                </div>
+                <div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex items-center gap-4 mb-3">
+                    <img src="GIDLA.PRANATHI SNEHA.MBBS,ESIC MEDICAL COLLOEGE,HYDERABAD.jpeg"
+                    class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+                    <div>
+                    <h3 class="font-medium">Gidla Pranathi Sneha</h3>
+                    <p class="text-sm text-gray-600">MBBS</p>
+                    <div class="flex items-center mt-1">
+                    <span class="text-xs text-gray-500">ESIC Medical College</span>
+                    </div>
+                    </div>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">"The encouragement and quality education I received here gave me an edge in my career."</p>
+        </div>
+        <div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+            <div class="flex items-center gap-4 mb-3">
+            <img src="GIDLA CHARAN KUMAR.EEE NIT PONDICHERRY,TAMILANADU.jpeg"
+            class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+            <div>
+            <h3 class="font-medium">Gidla Charan Kumar</h3>
+            <p class="text-sm text-gray-600">EEE</p>
+            <div class="flex items-center mt-1">
+            <span class="text-xs text-gray-500">NIT-PONDICHERRY</span>
+            </div>
+            </div>
+            </div>
+            <p class="text-sm text-gray-600 italic">"The competitive spirit and discipline I learned here shaped my career path."</p>
+            </div>
+        
+                <div class="flex-none w-80 bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex items-center gap-4 mb-3">
+                    <img src="deepak joy.JPG"
+                    class="w-16 h-16 rounded-full object-cover" alt="Alumni">
+                    <div>
+                    <h3 class="font-medium">G.Deepak Joy</h3>
+                    <p class="text-sm text-gray-600">Engineering science</p>
+                    <div class="flex items-center mt-1">
+                    <span class="text-xs text-gray-500">IIt Hyd</span>
+                    </div>
+                    </div>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">"Discipline, perseverance, and integrity—everything I needed to succeed, I learned here."</p>
+                    </div>
+                    </div>
+       
+
+
+</div>
+
+    
+    
+<button onclick="scrollAlumni('left')" class="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full shadow-md flex items-center justify-center">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<button onclick="scrollAlumni('right')" class="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full shadow-md flex items-center justify-center">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+</section>
+
+<section class="px-4 py-6">
+    <a href="Untitled-1.html">
+<h2 class="text-xl font-semibold mb-4">Key Highlights</h2>
+<div class="flex overflow-x-auto space-x-4 pb-4">
+<div class="flex-none w-64 bg-white rounded-lg shadow-sm p-4 cursor-pointer" href="mobile home.html">
+<img src="trophy.png"
+class="w-16 h-16 mb-3" alt="Academic Excellence">
+<h3 class="font-medium mb-2">Academic Excellence</h3>
+<p class="text-sm text-gray-600">Consistently ranked among top schools with outstanding academic achievements.</p>
+</div>
+</a>
+<a href="event.html">
+<div class="flex-none w-64 bg-white rounded-lg shadow-sm p-4">
+<img src="DALL·E 2025-02-16 10.41.36 - A colorful 3D-rendered illustration of various school event elements, including kites, diyas, traditional sweets, musical instruments, and festive dec.webp"
+class="w-16 h-16 mb-3" alt="Sports Facilities">
+<h3 class="font-medium mb-2">School Festivals & Events</h3>
+<p class="text-sm text-gray-600">Students coming together to celebrate culture, traditions, and joy—creating unforgettable memories and a vibrant school spirit!</p>
+</div>
+</div>
+</a>
+</section>
+<section class="px-4 py-6 bg-gray-50">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-semibold">Latest News</h2>
+<a href="add.html">
+<button class="text-primary text-sm font-medium">View All</button></a>  
+</div>
+<div class="space-y-4">
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+        <img src="HLO.jpg" 
+             class="w-full h-50 b-50 object-cover" alt="News Image">
+        <div class="p-4">
+            <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">Events</span>
+            <h3 class="font-medium mt-2 mb-1">Admissions Open for 2025-26 !!!</h3>
+            <p class="text-sm text-gray-600">Admissions Open! 🚀 Foundation program for IIT-JEE & NEET (2025-26) for Classes 6 to 10 with a Seat Guarantee Program. Secure your child’s future with expert guidance! 📚✨</p>
+        </div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full bg-white border-t border-gray-100">
+    <div class="grid grid-cols-5 h-16">
+        <a href="index.html" class="flex flex-col items-center justify-center space-y-1">
+            <i class="ri-home-line text-lg"></i>
+            <span class="text-xs">Home</span>
+        </a>
+        <a href="Untitled-1.html" class="flex flex-col items-center justify-center space-y-1">
+            <i class="ri-information-line text-lg"></i>
+            <span class="text-xs">About</span>
+        </a>
+        <a href="add.html" class="flex flex-col items-center justify-center space-y-1">
+            <i class="ri-advertisement-line text-lg"></i>
+            <span class="text-xs">Ads</span>
+        </a>
+        <a href="event.html" class="flex flex-col items-center justify-center space-y-1">
+            <i class="ri-calendar-event-line text-lg"></i>
+            <span class="text-xs">Event</span>
+        </a>
+        <a href="contact.html" class="flex flex-col items-center justify-center space-y-1">
+            <i class="ri-contacts-line text-lg"></i>
+            <span class="text-xs">Contact</span>
+        </a>
+    </div>
+</nav>
+<script>
+function toggleMenu() {
+const menu = document.getElementById('mobileMenu');
+menu.classList.toggle('menu-closed');
+menu.classList.toggle('menu-open');
+}
+function showAcademicExcellence() {
+document.getElementById('academicExcellencePage').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function hideAcademicExcellence() {
+document.getElementById('academicExcellencePage').classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+function scrollAlumni(direction) {
+const carousel = document.getElementById('alumniCarousel');
+const scrollAmount = 320;
+if (direction === 'left') {
+carousel.scrollBy({left: -scrollAmount, behavior: 'smooth'});
+} else {
+carousel.scrollBy({left: scrollAmount, behavior: 'smooth'});
+}
+}
+let currentSlide = 0;
+const slideInterval = 3000;
+function showSlide(index) {
+const slides = document.getElementById('rankSlides');
+const dots = document.querySelectorAll('.slide-dot');
+currentSlide = index;
+slides.style.transform = `translateX(-${index * 100}%)`;
+dots.forEach((dot, i) => {
+if (i === index) {
+dot.classList.add('bg-white');
+dot.classList.remove('bg-white/50');
+} else {
+dot.classList.remove('bg-white');
+dot.classList.add('bg-white/50');
+}
+});
+}
+function nextSlide() {
+currentSlide = (currentSlide + 1) % 3;
+showSlide(currentSlide);
+}
+setInterval(nextSlide, slideInterval);
+function showStudentDetails(element) {
+const studentName = element.querySelector('p').textContent;
+const achievement = element.querySelector('span').textContent;
+const detailsHTML = `
+<div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+<div class="bg-white rounded-lg w-[90%] max-h-[80vh] overflow-y-auto">
+<div class="p-4 border-b">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-semibold">${studentName}</h3>
+<button onclick="this.closest('.fixed').remove()" class="w-8 h-8 flex items-center justify-center">
+<i class="ri-close-line text-xl"></i>
+</button>
+</div>
+</div>
+<div class="p-4">
+<div class="mb-4">
+<span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">${achievement}</span>
+</div>
+<div class="space-y-4">
+<div>
+<h4 class="font-medium mb-2">Academic Achievements</h4>
+<ul class="list-disc list-inside text-sm text-gray-600">
+<li>First Place in National Science Competition</li>
+<li>Perfect Score in Mathematics Olympiad</li>
+<li>School Prefect</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium mb-2">Extra-curricular Activities</h4>
+<ul class="list-disc list-inside text-sm text-gray-600">
+<li>President of Science Club</li>
+<li>Member of School Orchestra</li>
+<li>Volunteer at Local Community Center</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+`;
+document.body.insertAdjacentHTML('beforeend', detailsHTML);
+}
+const highlights = document.querySelector('.overflow-x-auto');
+let isDown = false;
+let startX;
+let scrollLeft;
+highlights.addEventListener('mousedown', (e) => {
+isDown = true;
+startX = e.pageX - highlights.offsetLeft;
+scrollLeft = highlights.scrollLeft;
+});
+highlights.addEventListener('mouseleave', () => {
+isDown = false;
+});
+highlights.addEventListener('mouseup', () => {
+isDown = false;
+});
+highlights.addEventListener('mousemove', (e) => {
+if(!isDown) return;
+e.preventDefault();
+const x = e.pageX - highlights.offsetLeft;
+const walk = (x - startX) * 2;
+highlights.scrollLeft = scrollLeft - walk;
+});
+</script>
+</body>
+</html>

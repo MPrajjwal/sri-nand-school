@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#60a5fa'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .menu-open {
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-closed {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-white w-[375px] min-h-[762px] mx-auto relative">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="flex items-center justify-between px-4 h-14">
+            <div class="flex items-center">
+                <span class="font-['Pacifico'] text-primary text-xl">Sri Nand School</span>
+            </div>
+            <button onclick="toggleMenu()" class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <main class="pt-14 pb-16">
+        <section class="relative h-48 overflow-hidden">
+            <img src="logo.jpg" 
+                 class="w-full h-full object-cover" alt="School Building">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-5">
+                <div class="text-white"> 
+                    <h2 class="fadeText text-2xl font-semibold mb-2 opacity-0 transition-opacity duration-1000">Welcome to Our School</h2> 
+                    <p class="fadeText text-xl font-medium opacity-0 transition-opacity duration-1000 leading-tight">- Providing Excellence Since 16 Years</p>  
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+        <section class="px-4 py-0">
+            <a href="Untitled-1.html">
+                <h2 class="text-xl font-semibold mb-4">Key Highlights</h2>
+                <div class="flex overflow-x-auto space-x-4 pb-4">
+                <div class="flex-none w-64 bg-white rounded-lg shadow-sm p-4 cursor-pointer" href="mobile home.html">
+                <img src="trophy.png"
+                class="w-16 h-16 mb-3" alt="Academic Excellence">
+                <h3 class="font-medium mb-2">Academic Excellence</h3>
+                <p class="text-sm text-gray-600">Consistently ranked among top schools with outstanding academic achievements.</p>
+                </div>
+                </a>
+                <a href="event.html">
+                <div class="flex-none w-64 bg-white rounded-lg shadow-sm p-4">
+                    <img src="DALL·E 2025-02-16 10.41.36 - A colorful 3D-rendered illustration of various school event elements, including kites, diyas, traditional sweets, musical instruments, and festive dec.webp" 
+                         class="w-16 h-16 mb-3" alt="Sports Facilities">
+                    <h3 class="font-medium mb-2">School Festivals & Events</h3>
+                    <p class="text-sm text-gray-600">Students coming together to celebrate culture, traditions, and joy—creating unforgettable memories and a vibrant school spirit!.</p>
+                </div>
+            </a>
+            </div>
+        </section>
+       
+        <section class="px-4 py-6 bg-gray-50">
+            <a href="add.html">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Latest News</h2>
+                <button class="text-primary text-sm font-medium">View All</button>
+            </div>
+            <div class="space-y-6">
+                
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-16">
+                    <img src="HLO.jpg" 
+                         class="w-full h-50 b-50 object-cover" alt="News Image">
+                    <div class="p-4">
+                        <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">Events</span>
+                        <h3 class="font-medium mt-2 mb-1">Admissions Open for 2025-26 !!!</h3>
+                        <p class="text-sm text-gray-600">Admissions Open! 🚀 Foundation program for IIT-JEE & NEET (2025-26) for Classes 6 to 10 with a Seat Guarantee Program. Secure your child’s future with expert guidance! 📚✨</p>
+                    </div>
+
+                </div>
+            </a>
+            </div>
+        </section>
+    
+    
+
+    <nav class="fixed bottom-0 w-full bg-white border-t border-gray-100">
+        <div class="grid grid-cols-5 h-16">
+            <a href="index.html" class="flex flex-col items-center justify-center space-y-1">
+                <i class="ri-home-line text-lg"></i>
+                <span class="text-xs">Home</span>
+            </a>
+            <a href="Untitled-1.html" class="flex flex-col items-center justify-center space-y-1">
+                <i class="ri-information-line text-lg"></i>
+                <span class="text-xs">About</span>
+            </a>
+            <a href="add.html" class="flex flex-col items-center justify-center space-y-1">
+                <i class="ri-advertisement-line text-lg"></i>
+                <span class="text-xs">Ads</span>
+            </a>
+            <a href="event.html" class="flex flex-col items-center justify-center space-y-1">
+                <i class="ri-calendar-event-line text-lg"></i>
+                <span class="text-xs">Event</span>
+            </a>
+            <a href="contact.html" class="flex flex-col items-center justify-center space-y-1">
+                <i class="ri-contacts-line text-lg"></i>
+                <span class="text-xs">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fadeText");
+        fadeElements.forEach(el => {
+            setTimeout(() => {
+                el.classList.remove("opacity-0");
+            }, 400); // Delay for smooth effect
+        });
+    });
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('menu-closed');
+            menu.classList.toggle('menu-open');
+        }
+
+        const highlights = document.querySelector('.overflow-x-auto');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        highlights.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - highlights.offsetLeft;
+            scrollLeft = highlights.scrollLeft;
+        });
+
+        highlights.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        highlights.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        highlights.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - highlights.offsetLeft;
+            const walk = (x - startX) * 2;
+            highlights.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
